@@ -80,3 +80,14 @@ app.init = () => {
 };
 
 app.init();
+
+/* Farvesortering af køn */
+let teamImg = document.querySelectorAll(".team-img");
+
+profile.forEach((team, index) => {
+  if (team.teamGender === "male") {
+    teamImg[index].style.border = "solid 4px lightblue";
+  } else if (team.teamGender === "female") {
+    teamImg[index].style.border = "solid 4px pink";
+  }
+});
