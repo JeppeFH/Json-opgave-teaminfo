@@ -1,12 +1,14 @@
 /*Teaminfo Json opgave*/
 const app = {};
 
-const team = document.querySelector(".team");
-const teamList = document.querySelector(".team-list");
+app.init = async () => {
+  let team = document.querySelector(".team");
+  let listIcon = document.querySelector(".fa-bars");
+  let gitterIcon = document.querySelector(".fa-grip");
 
-/* Gittervisning */
-const profileTmpl = (element) =>
-  ` <section class="team">
+  /* Gitter visning */
+  const profileGridTmpl = (element) =>
+    ` <section class="team">
     <div class="team-profile ${element.teamGender}">
         <div class="team-header">
         <div class="team-img"><img src="${element.profileImg}" alt=""> </div></div>
@@ -18,9 +20,9 @@ const profileTmpl = (element) =>
       </section>
 `;
 
-/* liste visning */
-const profileListTmpl = (element) =>
-  ` <section class="team-list">
+  /* liste visning */
+  const profileListTmpl = (element) =>
+    ` <section class="team-list">
     <div class="team-profile ${element.teamGender}">
         <div class="team-header">
         <div class="team-img"><img src="${element.profileImg}" alt=""> </div></div>
@@ -32,35 +34,49 @@ const profileListTmpl = (element) =>
       </section>
 `;
 
-// Async metode //
-async function fetchPosts() {
-  try {
-    const response = await fetch("../data/team.json");
-    const posts = await response.json();
-    return posts;
-  } catch (error) {
-    console.error("Error fetching or parsing data:", error);
+  /*Async funktion der henter data  */
+  async function fetchPosts() {
+    try {
+      const response = await fetch("../data/team.json");
+      const posts = await response.json();
+      return posts;
+    } catch (error) {
+      console.error("Error fetching or parsing data:", error);
+    }
   }
-}
 
-/* Array med brugere */
-let posts = await fetchPosts();
+  /* Array med brugere */
+  let posts = await fetchPosts();
 
-/* Click event */
-const listIcon = document.querySelector(".fa-bars");
-const gitterIcon = document.querySelector(".fa-grip");
+  /* Udskriver listen af brugere */
+  function renderPosts() {
+    posts.forEach((post) => {
+      team.insertAdjacentHTML("beforeend", profileGridTmpl(post));
+    });
 
-listIcon.addEventListener("click", () => {
-  teamList.classList.add("active");
-  team.classList.add("active");
-});
+    /* Click event gitter */
+    gitterIcon.addEventListener("click", () => {
+      team.innerHTML = "";
+      posts.forEach((post) => {
+        team.insertAdjacentHTML("beforeend", profileGridTmpl(post));
+      });
+    });
 
-gitterIcon.addEventListener("click", () => {
-  teamList.classList.remove("active");
-  team.classList.remove("active");
-});
+    /* Click event list */
+    listIcon.addEventListener("click", () => {
+      team.innerHTML = "";
+      posts.forEach((post) => {
+        team.insertAdjacentHTML("beforeend", profileListTmpl(post));
+      });
+    });
+  }
 
-/* farveopdeling af køn */
+  renderPosts();
+};
+
+app.init();
+
+/* farvetildeling af køn */
 profile.forEach((team, index) => {
   if (team.teamGender === "male") {
     teamImg[index].style.border = "solid 4px lightblue";
