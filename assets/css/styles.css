@@ -25,10 +25,6 @@ body {
   margin-bottom: 20px;
 }
 
-.team.active {
-  display: none;
-}
-
 .team-profile {
   width: 200px;
   height: 250px;
@@ -142,10 +138,44 @@ body {
   cursor: pointer;
 }
 
+/* team list */
 .team-list {
-  display: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
 }
 
-.team-list.active {
-  display: block;
+.team-list .team-profile {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.team-list .team-header {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.team-list .team-img {
+  width: 80px;
+  height: 80px;
+  position: static;
+  margin-right: 20px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.team-list .team-name,
+.team-list .team-username,
+.team-list .team-mail {
+  text-align: left;
+  margin-left: 20px;
+  font-size: 1.4rem;
+}
+
+.team-list .team-website-btn {
+  margin-left: auto;
 }
