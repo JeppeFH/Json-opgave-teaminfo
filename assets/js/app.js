@@ -75,6 +75,7 @@ app.init = () => {
 `;
 
   profile.forEach((element) => {
+    //team.innerHTML += profileTmpl(element);
     team.insertAdjacentHTML("beforeend", profileTmpl(element));
   });
 };
