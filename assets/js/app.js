@@ -1,11 +1,11 @@
 /*Teaminfo Json opgave*/
 const app = {};
 
-app.init = () => {
-  const team = document.querySelector(".team");
+// app.init = () => { /* Udkommenteret. Denne del anvendes kun hvis fetch metode benyttes */
+const team = document.querySelector(".team");
 
-  const profileTmpl = (element) =>
-    ` <section class="team">
+const profileTmpl = (element) =>
+  ` <section class="team">
     <div class="team-profile ${element.teamGender}">
         <div class="team-header">
         <div class="team-img"><img src="${element.profileImg}" alt=""> </div></div>
@@ -16,17 +16,37 @@ app.init = () => {
       </div>
       </section>
 `;
+// }; /* Udkommenteret. Denne del anvendes kun hvis fetch metode benyttes */
 
-  fetch("/data/team.json")
+// Fetch metode (sættes ind i bund af app.init() //
+/* fetch("/data/team.json")
     .then((response) => response.json())
     .then((teamdata) => {
       teamdata.forEach((element) => {
-        team.insertAdjacentHTML("beforeend", profileTmpl(element));
+        teamFetch.insertAdjacentHTML("beforeend", profileTmpl(element));
       });
     });
 };
 
-app.init();
+app.init(); */
+
+// Async metode //
+/* Nedenstående kode er en nyere - og for de fleste en mere letlæselig 
+måde at fetche .json data. */
+async function fetchPosts() {
+  try {
+    const response = await fetch("../data/team.json");
+    const posts = await response.json();
+
+    posts.forEach((post) => {
+      team.insertAdjacentHTML("beforeend", profileTmpl(post));
+    });
+  } catch (error) {
+    console.error("Error fetching or parsing data:", error);
+  }
+}
+
+fetchPosts();
 
 /* Farvesortering af køn */
 let teamImg = document.querySelectorAll(".team-img");

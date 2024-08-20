@@ -14,63 +14,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/*FAQ accordians*/
-.accordion {
-  background-color: hsla(0, 0%, 13%, 1);
-  color: hsla(0, 0%, 100%, 1);
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-}
-
-.accordion p {
-  font-size: 1.7rem;
-}
-
-.panel p {
-  font-size: 1.2rem;
-}
-
-.active,
-.accordion:hover {
-  background-color: #ccc;
-}
-
-.accordion .panel {
-  display: none;
-}
-
-.accordion.active .panel {
-  display: block;
-}
-
-.panel {
-  padding: 0 18px;
-  background-color: #ccc;
-  overflow: hidden;
-  margin-top: 23px;
-}
-
-.show {
-  display: none;
-}
-
-.accordion:before {
-  content: "\02795"; /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
-  color: #777;
-  float: right;
-  margin-left: 5px;
-}
-
-.active:before {
-  content: "\2796"; /* Unicode character for "minus" sign (-) */
-}
-
 /* Opgave teaminfo */
 .team {
   background-color: grey;
