@@ -1,5 +1,4 @@
 /*Teaminfo Json opgave*/
-
 const app = {};
 
 app.init = () => {
