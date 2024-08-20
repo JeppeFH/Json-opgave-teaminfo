@@ -56,6 +56,8 @@ app.init = async () => {
 
     /* Click event gitter */
     gitterIcon.addEventListener("click", () => {
+      team.classList.remove("list-view");
+      team.classList.add("grid-view");
       team.innerHTML = "";
       posts.forEach((post) => {
         team.insertAdjacentHTML("beforeend", profileGridTmpl(post));
@@ -64,6 +66,8 @@ app.init = async () => {
 
     /* Click event list */
     listIcon.addEventListener("click", () => {
+      team.classList.remove("grid-view");
+      team.classList.add("list-view");
       team.innerHTML = "";
       posts.forEach((post) => {
         team.insertAdjacentHTML("beforeend", profileListTmpl(post));
