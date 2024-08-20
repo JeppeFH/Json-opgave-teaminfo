@@ -59,3 +59,12 @@ gitterIcon.addEventListener("click", () => {
   teamList.classList.remove("active");
   team.classList.remove("active");
 });
+
+/* farveopdeling af køn */
+profile.forEach((team, index) => {
+  if (team.teamGender === "male") {
+    teamImg[index].style.border = "solid 4px lightblue";
+  } else if (team.teamGender === "female") {
+    teamImg[index].style.border = "solid 4px pink";
+  }
+});
