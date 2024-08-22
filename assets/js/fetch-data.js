@@ -1,7 +1,7 @@
 /*Async funktion der henter data  */
 export async function fetchPosts() {
   try {
-    const response = await fetch("../data/team.json");
+    const response = await fetch("../data/team.json ");
     const posts = await response.json();
     return posts;
   } catch (error) {

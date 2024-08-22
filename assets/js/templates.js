@@ -26,9 +26,9 @@ export const profileListTmpl = (element) =>
       </section>
 `;
 
+/* Contact specifik bruger */
 export const teamContactTmpl = (element) =>
   `
-<section class="team-contact">
 <div class="team-info">
 <div class="team-img"><img src="${element.profileImg}" alt=""> </div></div>
 <div class="team-name"><p> ${element.teamName}</p></div>
@@ -39,5 +39,16 @@ export const teamContactTmpl = (element) =>
 <input class="contact-phone" type="text" placeholder="Telefon"></input
 <textarea placeholder="Din besked..." ></textarea>
  <button class="send-btn"></button>
-</section>
+
 `;
+
+/* firma info  */
+export const customerServiceTmpl = (element) =>
+  `
+  <p class="cu-message-us">${element.messageUs}</p>
+  <p class="cu-message-us-info">${element.messageUsInfo}</p>
+  <p class="cu-adress">${element.adress}</p>
+  <p class="cu-tlf">${element.customerServiceTlf}</p>
+  <p class="cu-email">${element.customerServiceEmail}</p>
+  
+  `;

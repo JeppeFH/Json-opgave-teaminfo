@@ -3,6 +3,7 @@ import {
   profileGridTmpl,
   profileListTmpl,
   teamContactTmpl,
+  customerServiceTmpl,
 } from "./templates.js";
 
 let team = document.querySelector(".team");

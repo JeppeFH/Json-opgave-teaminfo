@@ -1,9 +1,9 @@
 [
   {
-    "MessageUs": "Skriv til os",
-    "MessageUsInfo": "Vi er et firma, osv....",
-    "Adress": "",
-    "Kundeservice tlf": " 12 34 56 78",
-    "Kundeserivce E-mail": "firma@gmail.dk"
+    "messageUs": "Skriv til os",
+    "messageUsInfo": "Vi er et firma, osv....",
+    "adress": "firmavej 1",
+    "customerServiceTlf": " 12 34 56 78",
+    "customerServiceEmail": "firma@kundeservice.dk"
   }
 ]
