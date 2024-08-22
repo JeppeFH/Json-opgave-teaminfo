@@ -1,9 +1,18 @@
 import { fetchPosts } from "./fetch-data.js";
-import { profileGridTmpl, profileListTmpl } from "./templates.js";
+import {
+  profileGridTmpl,
+  profileListTmpl,
+  teamContactTmpl,
+} from "./templates.js";
 
 let team = document.querySelector(".team");
+
 let listIcon = document.querySelector(".fa-bars");
 let gitterIcon = document.querySelector(".fa-grip");
+
+let teamContact = document.querySelector(".team-contact");
+let teamInfo = document.querySelector(".team-info");
+let teamWebsiteBtn = document.querySelector(".team-website-btn");
 
 /* Array med brugere */
 let posts = await fetchPosts();
@@ -31,6 +40,12 @@ export function renderPosts() {
     team.innerHTML = "";
     posts.forEach((post) => {
       team.insertAdjacentHTML("beforeend", profileListTmpl(post));
+    });
+  });
+
+  teamWebsiteBtn.addEventListener("click", () => {
+    posts.forEach((post) => {
+      teamContact.insertAdjacentHTML("beforeend", teamContactTmpl(post));
     });
   });
 }

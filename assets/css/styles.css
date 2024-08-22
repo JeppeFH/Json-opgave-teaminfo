@@ -113,7 +113,7 @@ body {
   border: 2px solid black;
   text-decoration: none;
   position: relative;
-  left: 50px;
+  left: 38px;
 }
 
 .team-website-btn a:hover {
@@ -195,4 +195,29 @@ body {
   margin-right: 60px;
   position: relative;
   bottom: 6px;
+}
+
+/* [Section] team-contact */
+.team-contact {
+  width: 80%;
+  height: auto;
+  display: flex;
+  background-color: rgb(197, 197, 197);
+}
+
+.team-contact .team-info {
+  flex-direction: column;
+  width: 30%;
+  background-color: grey;
+}
+
+.team-contact input {
+  width: 20%;
+  height: 40px;
+  margin-left: auto;
+}
+
+.team-contact textarea {
+  width: 20%;
+  margin-left: auto;
 }

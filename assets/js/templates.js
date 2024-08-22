@@ -25,3 +25,19 @@ export const profileListTmpl = (element) =>
       </div>
       </section>
 `;
+
+export const teamContactTmpl = (element) =>
+  `
+<section class="team-contact">
+<div class="team-info">
+<div class="team-img"><img src="${element.profileImg}" alt=""> </div></div>
+<div class="team-name"><p> ${element.teamName}</p></div>
+<div class="team-mail"><p> ${element.teamMail}</p></div>
+</div>
+<input class="contact-name" type="text" placeholder="Navn"></input>
+<input class="contact-email" type="email" placeholder="E-mail"></input>
+<input class="contact-phone" type="text" placeholder="Telefon"></input
+<textarea placeholder="Din besked..." ></textarea>
+ <button class="send-btn"></button>
+</section>
+`;
